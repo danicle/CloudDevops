@@ -2,8 +2,9 @@ setup:
 	python3 -m venv ~/.udacity-devops
 
 install:
-	pip install --upgrade pip &&\
-		pip install -r requirements.txt
+	pip install --upgrade pip 
+	pip install -r requirements.txt 
+	docker pull hadolint/hadolint
 
 test:
 	#python -m pytest -vv --cov=myrepolib tests/*.py
