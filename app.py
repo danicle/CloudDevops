@@ -61,6 +61,8 @@ def predict():
     scaled_payload = scale(inference_payload)
     #clf = joblib.load("boston_housing_prediction.joblib")
     prediction = list(clf.predict(scaled_payload))
+    LOG.info(f"The prediction value is: {prediction}")
+    
     return jsonify({'prediction': prediction})
 
 if __name__ == "__main__":
