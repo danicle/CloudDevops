@@ -20,7 +20,7 @@ def scale(payload):
 
 @app.route("/")
 def home():
-    html = f"<h3>Sklearn Prediction Home</h3>"
+    html = "<h3>Sklearn Prediction Home</h3>"
     return html.format(format)
 
 # TO DO:  Log out the prediction value
@@ -59,7 +59,7 @@ def predict():
     inference_payload = pd.DataFrame(json_payload)
     LOG.info(f"inference payload DataFrame: {inference_payload}")
     scaled_payload = scale(inference_payload)
-    clf = joblib.load("boston_housing_prediction.joblib")
+    #clf = joblib.load("boston_housing_prediction.joblib")
     prediction = list(clf.predict(scaled_payload))
     return jsonify({'prediction': prediction})
 
