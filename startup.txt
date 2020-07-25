@@ -1,2 +1,2 @@
-chmod +x make_predictions.sh
+chmod +x make_prediction.sh
 ./make_prediction.sh
